@@ -7,6 +7,11 @@ const helmet = require("helmet");
 const app = express();
 const exphbs = require("express-handlebars");
 const db = require("./models");
+const {
+  allowInsecurePrototypeAccess
+} = require("@handlebars/allow-prototype-access");
+const htmlRouter = require("./routes/html-routes");
+const apiroutes = require("./routes/api-routes");
 
 const PORT = process.env.PORT || 8080;
 
@@ -21,7 +26,13 @@ app.get("/auth_config.json", (req, res) => {
   res.sendFile(join(__dirname, "auth_config.json"));
 });
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main",
+    handlebars: allowInsecurePrototypeAccess(Handlebars)
+  })
+);
 app.set("view engine", "handlebars");
 
 app.get("/*", (_, res) => {
@@ -32,8 +43,8 @@ process.on("SIGINT", function() {
   process.exit();
 });
 
-require("./routes/api-routes.js")(app);
-require("./routes/html-routes.js")(app);
+app.use(apiroutes);
+app.use(htmlRouter);
 
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
