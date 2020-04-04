@@ -1,0 +1,42 @@
+{{!-- The edit page for the list --}}
+
+<div class="container">
+    <div class="row">
+        <h1 class="text-center">Edit List</h1>
+    </div>
+    <div class="row">
+        <form>
+            <label for="addItem">Search for an Item:</label>
+            </br>
+            <input type="text" id="addItem" name="addItem">
+            <label for="categories">Categories:</label>
+            <select id="categories">
+                <option value="dairy">Dairy</option>
+                <option value="produce">Produce</option>
+                <option value="other">Other</option>
+            </select>
+            <button type="button">Add</button>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            {{!-- List --}}
+            <ul id="theList">
+                {{!-- List items go here --}}
+            </ul>
+        </div>
+        <div class="col-6">
+            <form>
+                <select id="categories">
+                    <option value="dairy">Dairy</option>
+                    <option value="produce">Produce</option>
+                    <option value="other">Other</option>
+                </select>
+            </form>
+            <br>
+            <ul id="optionsList">
+                {{!-- List items go here --}}
+            </ul>
+        </div>
+    </div>
+</div>

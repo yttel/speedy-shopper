@@ -1,0 +1,103 @@
+{{!-- Basic layout with place for partials--}}
+
+<div class="container">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <ul class="navbar-nav mr-auto">
+                    <li><a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li><a class="nav-item nav-link" href="#">Features</a></li>
+                    <li><a class="nav-item nav-link" href="#">Pricing</a></li>
+                    <li><a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav d-none d-md-block">
+                    <!-- Login button: show if NOT authenticated -->
+                    <li class="nav-item auth-invisible">
+                        <button id="qsLoginBtn" onclick="login()"
+                            class="btn btn-primary btn-margin auth-invisible hidden">
+                            Log in
+                        </button>
+                    </li>
+                    <!-- / Login button -->
+                    <!-- Fullsize dropdown: show if authenticated -->
+                    <li class="nav-item dropdown auth-visible hidden">
+                        <a class="nav-link dropdown-toggle" href="#" id="profileDropDown" data-toggle="dropdown">
+                            <!-- Profile image should be set to the profile picture from the id token -->
+                            <img alt="Profile picture" class="nav-user-profile profile-image rounded-circle"
+                                width="50" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <!-- Show the user's full name from the id token here -->
+                            <div class="dropdown-header nav-user-name user-name"></div>
+                            <a href="/profile" class="dropdown-item dropdown-profile route-link">
+                                <i class="fas fa-user mr-3"></i> Profile
+                            </a>
+                            <a href="#" class="dropdown-item" id="qsLogoutBtn" onclick="logout()">
+                                <i class="fas fa-power-off mr-3"></i> Log out
+                            </a>
+                        </div>
+                    </li>
+                    <!-- /Fullsize dropdown -->
+                </ul>
+                <!-- Responsive login button: show if NOT authenticated -->
+                <ul class="navbar-nav d-md-none auth-invisible">
+                    <button class="btn btn-primary btn-block auth-invisible hidden" id="qsLoginBtn" onclick="login()">
+                        Log in
+                    </button>
+                </ul>
+                <!-- /Responsive login button -->
+                <!-- Responsive profile dropdown: show if authenticated -->
+                <ul class="navbar-nav d-md-none auth-visible hidden justify-content-between" style="min-height: 125px;">
+                    <li class="nav-item">
+                        <span class="user-info">
+                            <!-- Profile image should be set to the profile picture from the id token -->
+                            <img alt="Profile picture"
+                                class="nav-user-profile d-inline-block profile-image rounded-circle mr-3" width="50" />
+                            <!-- Show the user's full name from the id token here -->
+                            <h6 class="d-inline-block nav-user-name user-name"></h6>
+                        </span>
+                    </li>
+                    <li>
+                        <i class="fas fa-user mr-3"></i>
+                        <a href="/profile" class="route-link">Profile</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-power-off mr-3"></i>
+                        <a href="#" id="qsLogoutBtn" onclick="logout()">Log out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+{{> edit-page}}
+{{> go-shoping}}
+<div class="container">
+    <footer class="page-footer font-small pt-4">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <h5 class="text-uppercase">Speedy Shopper</h5>
+                    <p>Here is a place that we can put some text into</p>
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <h5 class="text-uppercase">Links</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#">Edit List</a>
+                    </li>
+                    <li>
+                        <a href="#">Go Shopping</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
