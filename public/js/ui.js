@@ -39,6 +39,7 @@ const showContentFromUrl = (url) => {
  * Returns true if `element` is a hyperlink that can be considered a link to another SPA route
  * @param {*} element The element to check
  */
+// eslint-disable-next-line no-unused-vars
 const isRouteLink = (element) =>
   element.tagName === "A" && element.classList.contains("route-link");
 
@@ -56,6 +57,7 @@ const showContent = (id) => {
 /**
  * Updates the user interface
  */
+// eslint-disable-next-line no-unused-vars
 const updateUI = async () => {
   try {
     const isAuthenticated = await auth0.isAuthenticated();

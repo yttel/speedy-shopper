@@ -10,7 +10,7 @@ const login = async (targetUrl) => {
     console.log("Logging in", targetUrl);
 
     const options = {
-      redirect_uri: window.location.origin
+      redirectUri: window.location.origin
     };
 
     if (targetUrl) {
@@ -26,6 +26,7 @@ const login = async (targetUrl) => {
 /**
  * Executes the logout flow
  */
+// eslint-disable-next-line no-unused-vars
 const logout = () => {
   try {
     console.log("Logging out");
@@ -51,7 +52,7 @@ const configureClient = async () => {
 
   auth0 = await createAuth0Client({
     domain: config.domain,
-    client_id: config.clientId
+    clientId: config.clientId
   });
 };
 
@@ -60,6 +61,7 @@ const configureClient = async () => {
  * is prompted to log in
  * @param {*} fn The function to execute if the user is logged in
  */
+// eslint-disable-next-line no-unused-vars
 const requireAuth = async (fn, targetUrl) => {
   const isAuthenticated = await auth0.isAuthenticated();
 
@@ -101,7 +103,7 @@ window.onload = async () => {
     window.history.replaceState({}, document.title, window.location.pathname);
     updateUI();
     return;
-  };
+  }
   console.log("> User not authenticated");
 
   const query = window.location.search;
