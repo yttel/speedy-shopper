@@ -1,13 +1,13 @@
 
 module.exports = function(sequelize, DataTypes) {
   const User = sequelize.define("User", {
-    user_id: {
+    userID: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
-    user_name: {
+    userName: {
       type: DataTypes.STRING,
       allowNull: false,
       len: [1]
@@ -17,6 +17,6 @@ module.exports = function(sequelize, DataTypes) {
   // User.associate = function(models){
   //   User.hasMany(models.List_Item) 
   // };
-  
+
   return User;
 };
