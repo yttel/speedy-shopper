@@ -1,22 +1,22 @@
 
 module.exports = function(sequelize, DataTypes) {
-  const User = sequelize.define("User", {
-    userID: {
+  const Category = sequelize.define("User", {
+    categoryID: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
-    userName: {
+    catName: {
       type: DataTypes.STRING,
       allowNull: false,
       len: [1]
     }
   });
 
-  User.associate = function(models){
-    User.hasMany(models.ListItem);
+  Category.associate = function(models){
+    Category.hasMany(models.Item);
   };
 
-  return User;
+  return Category;
 };
