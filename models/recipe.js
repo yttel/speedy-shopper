@@ -1,13 +1,13 @@
 
 module.exports = function(sequelize, DataTypes) {
-  const Recipe = sequelize.define("User", {
-    recipeID: {
+  const Recipe = sequelize.define("Recipe", {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
-    recipeName: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
       len: [1]
@@ -15,7 +15,9 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Recipe.associate = function(models){
-    Recipe.hasMany(models.List_Item);
+    Recipe.belongsToMany(models.ListItem, {
+      through: "ItemRecipe"
+    });
   };
 
   return Recipe;

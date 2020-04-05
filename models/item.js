@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   const Item = sequelize.define("Item", {
-    itemID: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -13,23 +13,20 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  // Item.associate = function(models) {
-  //   Item.belongsTo(models.Category, {
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   });
-  //   Item.belongsToMany(models.Recipe, {
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   });
-  //   Item.belongsToMany(models.ListItem, {
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   });
-  // };
+  Item.associate = function(models) {
+
+    Item.hasMany(models.ListItem,);
+    
+    Item.belongsTo(models.Category, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+    
+    Item.belongsToMany(models.Recipe, {
+      through: "ItemRecipe"
+    });
+  };
 
   return Item;
 };

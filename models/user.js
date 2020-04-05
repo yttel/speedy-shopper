@@ -1,21 +1,23 @@
 
 module.exports = function(sequelize, DataTypes) {
   const User = sequelize.define("User", {
-    userID: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
-    userName: {
+    email: {
       type: DataTypes.STRING,
-      allowNull: false,
-      len: [1]
+      allowNull: false
+    },
+    avatar: { //stores an href string to image
+      type: DataTypes.STRING
     }
   });
 
   User.associate = function(models){
-    User.hasMany(models.ListItem);
+    User.hasMany(models.Household);
   };
 
   return User;
