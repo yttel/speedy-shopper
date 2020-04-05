@@ -7,11 +7,12 @@ const helmet = require("helmet");
 const app = express();
 const exphbs = require("express-handlebars");
 const db = require("./models");
+const Handlebars = require("handlebars");
 const {
   allowInsecurePrototypeAccess
 } = require("@handlebars/allow-prototype-access");
 const htmlRouter = require("./routes/html-routes");
-const apiroutes = require("./routes/api-routes");
+// const apiroutes = require("./routes/api-routes");
 
 const PORT = process.env.PORT || 8080;
 
@@ -35,15 +36,15 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-app.get("/*", (_, res) => {
-  res.sendFile(join(__dirname, "index.html"));
-});
+// app.get("/*", (_, res) => {
+//   res.sendFile(join(__dirname, "index.html"));
+// });
 
 process.on("SIGINT", function() {
   process.exit();
 });
 
-app.use(apiroutes);
+// app.use(apiroutes);
 app.use(htmlRouter);
 
 db.sequelize.sync({ force: true }).then(function() {
