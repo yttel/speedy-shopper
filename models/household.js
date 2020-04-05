@@ -1,6 +1,6 @@
 
 module.exports = function(sequelize, DataTypes) {
-  const Category = sequelize.define("Category", {
+  const Household = sequelize.define("Household", {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -14,9 +14,11 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Category.associate = function(models){
-    Category.hasMany(models.Item);
+  Household.associate = function(models){
+    Household.hasMany(models.ListItem);
+
+    Household.belongsTo(models.User);
   };
 
-  return Category;
+  return Household;
 };

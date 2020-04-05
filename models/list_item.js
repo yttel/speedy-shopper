@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   const ListItem = sequelize.define("ListItem", {
-    listItemID: {
+    listItem: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -25,11 +25,14 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   ListItem.associate = function(models) {
+
     ListItem.belongsTo(models.Item, {
       foreignKey: {
         allowNull: false
       }
     });
+
+    ListItem.belongsTo(models.Household);
   };
 
   return ListItem;
