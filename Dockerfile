@@ -1,15 +1,11 @@
-FROM node:10-alpine
+FROM node:8.7-alpine
 
-RUN mkdir /app
+WORKDIR /home/app
 
-WORKDIR /app
+ADD package.json /home/app
+RUN npm install
+ADD . /home/app
 
-COPY package.json .
+CMD ["npm", "start"]
 
-RUN npm install --production
-
-COPY . .
-
-EXPOSE 3000
-
-CMD ["node", "bin/www"]
+EXPOSE 8080
