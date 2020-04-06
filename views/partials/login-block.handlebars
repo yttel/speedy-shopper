@@ -1,0 +1,7 @@
+<button id="qsLoginBtn" class="btn btn-primary btn-margin auth-invisible hidden">
+  {{#if (login.user)}}<a href="/user"></a>welcome!
+  <a href="/logout">logout</a> 
+  {{else}}
+  <a href="/login" </a> 
+   please login.{{/if}}
+</button>
