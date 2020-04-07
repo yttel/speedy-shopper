@@ -105,5 +105,4 @@ dist
 
 # auth0 ignores
 a0-variables.js
-auth_config.json
 node_modules/
