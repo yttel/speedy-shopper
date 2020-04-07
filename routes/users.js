@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET user profile. */
 // eslint-disable-next-line no-unused-vars
-router.get("/user", secured, function (req, res, next) {
+router.get("/user", secured(), function (req, res, next) {
   // eslint-disable-next-line no-unused-vars
   const { _raw, _json, ...userProfile } = req.user;
   res.render("user", {
