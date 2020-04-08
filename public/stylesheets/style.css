@@ -2,3 +2,46 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+body {
+  background:url("br1.jpg");
+  background-size: 100%, contain;
+}
+
+div#goshoplist {
+  background: #efefef;
+  border-radius: 25px;
+}
+
+h1.listtitle {
+  font-family: 'Lobster', cursive;
+}
+
+h2.nexttime {
+  font-family: 'Lobster', cursive;
+}
+
+a.navbar-brand {
+  font-family: 'Lobster', cursive;
+  font-size: 35px;
+}
+
+button.delete-listitem {
+  background-color: #34a019;
+}
+
+button.next-time {
+  background-color: #01b3d3;
+}
+
+i.fa-cart-arrow-down {
+  color: #efefef;
+}
+
+i.fa-share-square {
+  color: #efefef;
+}
+
+a.LoginBtn {
+  color: #efefef;
+}
