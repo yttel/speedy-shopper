@@ -22,8 +22,8 @@ const htmlRouter = require("./routes/html-routes");
 // Configure Passport to use Auth0
 const strategy = new Auth0Strategy(
   {
-    domain: process.env.AUTH_DOMAIN,
-    clientID: process.env.CLIENT_ID,
+    domain: process.env.AUTH0_DOMAIN,
+    clientID: process.env.AUTH0_CLIENT_ID,
     clientSecret: process.env.APP_SESSION_SECRET,
     callbackURL:
       process.env.AUTH0_CALLBACK_URL || "http://localhost:8080/callback",
