@@ -1,9 +1,18 @@
 <button id="qsLoginBtn" class="btn btn-primary btn-margin auth-invisible hidden">
-  {{#if (login.user)}}
+  {{#if locals.user}}
+    <a href="/user" class="LoginBtn">Welcome!</a>
+    <button><a href="/logout" class="LoginBtn">logout</a></button> 
+    {{else}}
+      <a href="/login" class="LoginBtn">please login!</a>
+  {{/if}}
+
+</button>
+<button id="qsLoginBtn" class="btn btn-primary btn-margin auth-invisible hidden">
+  {{#if locals.user}}
     <a href="/user" class="LoginBtn">Welcome!</a>
     <a href="/logout" class="LoginBtn">logout</a> 
     {{else}}
-      <a href="/login" class="LoginBtn">please login!</a>
+      <a href="/logout" class="LoginBtn">logout</a>
   {{/if}}
 
 </button>
