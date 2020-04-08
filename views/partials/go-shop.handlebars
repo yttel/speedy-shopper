@@ -1,41 +1,150 @@
 {{!-- The shopping list --}}
 
-<div class="container">
-    <div class="row">
-        <h1 class="text-center">Shopping List</h1>
+<div class="container mt-5" id="goshoplist">
+    <div class="row d-flex justify-content-center">
+        <h1 class="listtitle my-3">Go Shopping!</h1>
     </div>
+    <hr>
     <div class="row">
-        <div class="col-6">
-            <div class="cow">
-                <h3>Dairy</h3>
+        <div class="col-lg-6 col-md-12">
+            <div class="cow mb-4">
+                <h3><i class="fas fa-cheese"></i>   Dairy</h3>
                 <ul id="theDairy">
-                    {{!-- push dairy items here as li --}}
+                    <li>Milk<button class="delete-listitem border-0 rounded-circle ml-3"><i class="fas fa-cart-arrow-down"></i></button>
+                    <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button></li>
+                
+                    {{!-- {{#each ItemId}}
+                        {{#if CategoryId= }}
+                            <li>
+	                            {{name}}
+                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.id}}"><i class="fas fa-cart-arrow-down"></i></button>
+                                <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button>
+                            </li>
+                        {{/if}}
+                    {{/each}} --}}
+                
                 </ul>
             </div>
-            <div class="veggies">
-                <h3>Produce</h3>
-                <ul id="Theproduce">
-                    {{!-- push produce stuff here --}}
+            <div class="veggies mb-4">
+                <h3><i class="fas fa-carrot"></i>   Produce</h3>
+                <ul id="TheProduce">
+                    <li>Carrots<button class="delete-listitem border-0 rounded-circle ml-3"><i class="fas fa-cart-arrow-down"></i></button>
+                    <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button></li>
+
+                    {{!-- {{#each ItemId}}
+                        {{#if CategoryId= }}
+                            <li>
+	                            {{name}}
+                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.id}}"><i class="fas fa-cart-arrow-down"></i></button>
+                                <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button>
+                            </li>
+                        {{/if}}
+                    {{/each}} --}}
+
+                </ul>
+            </div>
+            <div class="meat mb-4">
+                <h3><i class="fas fa-bacon"></i>   Meat</h3>
+                <ul id="TheMeat">
+                    <li>Steak<button class="delete-listitem border-0 rounded-circle ml-3"><i class="fas fa-cart-arrow-down"></i></button>
+                    <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button></li>
+
+                    {{!-- {{#each ItemId}}
+                        {{#if CategoryId= }}
+                            <li>
+	                            {{name}}
+                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.id}}"><i class="fas fa-cart-arrow-down"></i></button>
+                                <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button>
+                            </li>
+                        {{/if}}
+                    {{/each}} --}}
+
+                </ul>
+            </div>
+            <div class="bread mb-4">
+                <h3><i class="fas fa-bread-slice"></i>   Bread/Bakery</h3>
+                <ul id="TheBread">
+                    <li>Bagels<button class="delete-listitem border-0 rounded-circle ml-3"><i class="fas fa-cart-arrow-down"></i></button>
+                    <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button></li>
+
+                    {{!-- {{#each ItemId}}
+                        {{#if CategoryId= }}
+                            <li>
+	                            {{name}}
+                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.id}}"><i class="fas fa-cart-arrow-down"></i></button>
+                                <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button>
+                            </li>
+                        {{/if}}
+                    {{/each}} --}}
+
                 </ul>
             </div>
         </div>
-        <div class="col-6">
-            <div id="bread">
-                <h3>Bread</h3>
-                <ul id="theBread">
-                    {{!-- push the breads stuff here --}}
+        <div class="col-lg-6 col-md-12">
+            <div class="frozen mb-4">
+                <h3><i class="far fa-snowflake"></i>   Frozen</i></h3>
+                <ul id="TheFrozen">
+                    <li>Ice Cream<button class="delete-listitem border-0 rounded-circle ml-3"><i class="fas fa-cart-arrow-down"></i></button>
+                    <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button></li>
+
+                    {{!-- {{#each ItemId}}
+                        {{#if CategoryId= }}
+                            <li>
+	                            {{name}}
+                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.id}}"><i class="fas fa-cart-arrow-down"></i></button>
+                                <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button>
+                            </li>
+                        {{/if}}
+                    {{/each}} --}}
+
                 </ul>
             </div>
-            <div id="other">
-                <h3>Other</h3>
-                <ul id="theOther">
-                    {{!-- push the other things here --}}
+          <div class="packaged mb-4">
+                <h3><i class="fas fa-box-open"></i>   Packaged/Dry Goods</h3>
+                <ul id="ThePackaged">
+                    <li>Pasta<button class="delete-listitem border-0 rounded-circle ml-3"><i class="fas fa-cart-arrow-down"></i></button>
+                    <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button></li>
+
+                    {{!-- {{#each ItemId}}
+                        {{#if CategoryId= }}
+                            <li>
+	                            {{name}}
+                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.id}}"><i class="fas fa-cart-arrow-down"></i></button>
+                                <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button>
+                            </li>
+                        {{/if}}
+                    {{/each}} --}}
+
+                </ul>
+            </div>  
+            <div class="other mb-4">
+                <h3><i class="fas fa-utensils"></i>   Other</h3>
+                <ul id="TheOther">
+                    <li>Toilet Paper<button class="delete-listitem border-0 rounded-circle ml-3"><i class="fas fa-cart-arrow-down"></i></button>
+                    <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button></li>
+
+                    {{!-- {{#each ItemId}}
+                        {{#if CategoryId= }}
+                            <li>
+	                            {{name}}
+                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.id}}"><i class="fas fa-cart-arrow-down"></i></button>
+                                <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button>
+                            </li>
+                        {{/if}}
+                    {{/each}} --}}
+                    
                 </ul>
             </div>
         </div>
     </div>
-    <div class="row">
-        <button type="button">Edit</button>
-        <button type="button">Save</button>
+</div>
+
+<div class="container mt-5" id="goshoplist">
+    <div class="row d-flex justify-content-center">
+        <h2 class="nexttime my-3">Get Next Time!</h2>
+    </div>
+    <hr>
+    <div class="nexttime-items">
+        {{!-- push items for next time here --}}
     </div>
 </div>
