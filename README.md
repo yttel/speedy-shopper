@@ -1,8 +1,24 @@
-# project2
-Project 2
+# Speedy Shopper
+
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
   [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
+  
+  [![NPM](https://nodei.co/npm/connect-flash.png?mini=true)](https://nodei.co/npm/connect-flash/)
+  [![NPM](https://nodei.co/npm/debug.png?mini=true)](https://nodei.co/npm/debug/)
+  [![NPM](https://nodei.co/npm/dotenv.png?mini=true)](https://nodei.co/npm/dotenv/)
+  [![NPM](https://nodei.co/npm/express.png?mini=true)](https://nodei.co/npm/express/)
+  [![NPM](https://nodei.co/npm/express-handlebars.png?mini=true)](https://nodei.co/npm/express-handlebars/)
+  [![NPM](https://nodei.co/npm/express-openid-connect.png?mini=true)](https://nodei.co/npm/express-openid-connect/)
+  [![NPM](https://nodei.co/npm/express-session.png?mini=true)](https://nodei.co/npm/express-session/)
+  [![NPM](https://nodei.co/npm/helmet.png?mini=true)](https://nodei.co/npm/helmet/)
+  [![NPM](https://nodei.co/npm/morgan.png?mini=true)](https://nodei.co/npm/morgan/)
+  [![NPM](https://nodei.co/npm/mysql.png?mini=true)](https://nodei.co/npm/mysql/)
+  [![NPM](https://nodei.co/npm/mysql2.png?mini=true)](https://nodei.co/npm/mysql2/)
+  [![NPM](https://nodei.co/npm/passport.png?mini=true)](https://nodei.co/npm/passport/)
+  [![NPM](https://nodei.co/npm/passport-auth0.png?mini=true)](https://nodei.co/npm/passport-auth0/)
+  [![NPM](https://nodei.co/npm/sequelize.png?mini=true)](https://nodei.co/npm/sequelize/)
+  
   
 # Speedy Shopper.
 #### matt
