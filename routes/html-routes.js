@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const groceryCont = require("../controller/groceryController")
+const groceryCont = require("../controller/groceryController");
 
 
 router.get("/", (req, res) => {
