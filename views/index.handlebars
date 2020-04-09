@@ -1,48 +1,24 @@
 {{!-- Basic layout with place for partials--}}
 
-<div class="container">
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <ul class="navbar-nav mr-auto">
-                    <li><a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li><a class="nav-item nav-link" href="#">Features</a></li>
-                    <li><a class="nav-item nav-link" href="#">Pricing</a></li>
-                    <li><a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-               {{> login-block}}
-            </div>
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand" href="#">Speedy Shopper</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <ul class="navbar-nav mr-auto">
+                <li><a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li><a class="nav-item nav-link" href="#">Edit List</a></li>
+                <li><a class="nav-item nav-link" href="#">Shopping List</a></li>
+            </ul>
+            {{> login-block}}
         </div>
-    </nav>
-</div>
-{{> edit-page}}
-{{> go-shop}}
+    </div>
+</nav>
+
 <div class="container">
-    <footer class="page-footer font-small pt-4">
-        <div class="container-fluid text-center text-md-left">
-            <div class="row">
-                <div class="col-md-6 mt-md-0 mt-3">
-                    <h5 class="text-uppercase">Speedy Shopper</h5>
-                    <p>Here is a place that we can put some text into</p>
-                </div>
-                <hr class="clearfix w-100 d-md-none pb-3">
-                <h5 class="text-uppercase">Links</h5>
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="#">Edit List</a>
-                    </li>
-                    <li>
-                        <a href="#">Go Shopping</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+    {{> edit-page}}
 </div>
