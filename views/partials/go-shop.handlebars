@@ -14,13 +14,13 @@
                     <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button></li>
                 
                     {{#each listItem}}
-                        {{#if Item.CategoryId == 1}}
+                        {{!-- {{#if Item.CategoryId == 1}} --}}
                             <li>
 	                            {{Item.name}}
                                 <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.id}}"><i class="fas fa-cart-arrow-down"></i></button>
                                 <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button>
                             </li>
-                        {{/if}}
+                        {{!-- {{/if}} --}}
                     {{/each}}
                 
                 </ul>
