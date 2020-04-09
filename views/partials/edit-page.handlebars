@@ -1,42 +1,66 @@
 {{!-- The edit page for the list --}}
 
-<div class="container">
-    <div class="row">
-        <h1 class="text-center">Edit List</h1>
+<div class="container" id="editList">
+    <div class="row d-flex justify-content-center">
+        <h1 class="listtitle my-3">Edit List!</h1>
     </div>
+    <hr>
     <div class="row">
-        <form>
-            <label for="addItem">Search for an Item:</label>
-            </br>
-            <input type="text" id="addItem" name="addItem">
-            <label for="categories">Categories:</label>
-            <select id="categories">
-                <option value="dairy">Dairy</option>
-                <option value="produce">Produce</option>
-                <option value="other">Other</option>
-            </select>
-            <button type="button">Add</button>
-        </form>
+        <div class="addItem">
+            <form>
+                <label for="addItem">Search for an Item:</label>
+                <input type="text" id="addItem" name="addItem">
+                <label for="categories">Categories:</label>
+                <select id="categories">
+                    <option value="dairy"><i class="fas fa-cheese"></i> Dairy</option>
+                    <option value="produce"><i class="fas fa-carrot"></i> Produce</option>
+                    <option value="meat"><i class="fas fa-bacon"> Meat</i></option>
+                    <option value="bread"><i class="fas fa-bread-slice"> Bread/Bakery</i></option>
+                    <option value="frozen"><i class="far fa-snowflake"> Frozen</i></option>
+                    <option value="packaged"><i class="fas fa-box-open"></i> Packaged/Dry Goods</option>
+                    <option value="other"><i class="fas fa-utensils"></i> Other</option>
+                </select>
+                <button class="addMe" type="button">Add</button>
+            </form>
+        </div>
     </div>
+    <hr>
     <div class="row">
-        <div class="col-6">
-            {{!-- List --}}
-            <ul id="theList">
-                {{!-- List items go here --}}
+        <div class="col-6 theList">
+            <ul>
+                {{!-- List --}}
+                {{!--{{# if clicked}}
+                <li>{{{name}}}
+                </li> 
+                {{#/if}} --}}
+                <li>This is an example</li>
             </ul>
         </div>
-        <div class="col-6">
-            <form>
+        <div class="col-6 premade">
+            <form class="dropdownSelect">
                 <select id="categories">
-                    <option value="dairy">Dairy</option>
-                    <option value="produce">Produce</option>
-                    <option value="other">Other</option>
+                    <option value="dairy"><i class="fas fa-cheese"></i> Dairy</option>
+                    <option value="produce"><i class="fas fa-carrot"></i> Produce</option>
+                    <option value="meat"><i class="fas fa-bacon"> Meat</i></option>
+                    <option value="bread"><i class="fas fa-bread-slice"> Bread/Bakery</i></option>
+                    <option value="frozen"><i class="far fa-snowflake"> Frozen</i></option>
+                    <option value="packaged"><i class="fas fa-box-open"></i> Packaged/Dry Goods</option>
+                    <option value="other"><i class="fas fa-utensils"></i> Other</option>
                 </select>
             </form>
-            <br>
+            <hr>
             <ul id="optionsList">
-                {{!-- List items go here --}}
+                {{!-- List items go here based on what category that you select --}}
+                {{!--{{#each categoryId}} 
+                    {{#if selected}}
+                        <li>{{name}}</li>
+                    {{/if}}
+                    {{/each}}            
+                --}}
             </ul>
         </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <button class="goShopNow" type="button">Go Shopping!</button>
     </div>
 </div>
