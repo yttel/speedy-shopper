@@ -4,7 +4,7 @@ form.login {
 }
 
 body {
-  background:url("br1.jpg");
+  background: url("br1.jpg");
   background-size: 100%, contain;
 }
 
@@ -14,15 +14,15 @@ div#goshoplist {
 }
 
 h1.listtitle {
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
 }
 
 h2.nexttime {
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
 }
 
 a.navbar-brand {
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   font-size: 35px;
 }
 
@@ -44,4 +44,32 @@ i.fa-share-square {
 
 a.LoginBtn {
   color: #efefef;
+}
+
+div#editList {
+  background: #efefef;
+  border-radius: 25px;
+  margin-top: 50px;
+}
+
+div.theList {
+  border: 1px dotted gray;
+  border-radius: 25px;
+}
+
+div.premade {
+  border: 1px dotted gray;
+  border-radius: 25px;
+}
+
+button.addMe {
+  background-color: #34a019;
+}
+
+button.goShopNow {
+  font-family: "Lobster", cursive;
+  font-size: larger;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  background-color: #34a019;
 }
