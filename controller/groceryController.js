@@ -6,6 +6,7 @@ const resolveToJSON = (sqlzeArr) => {
 
 const groceryController = {
 
+  //==============
   /*-- CREATE --*/
   //==============
 
@@ -37,8 +38,9 @@ const groceryController = {
 
   //new recipe
 
+  //============
   /*-- READ --*/
-  //===============
+  //============
 
   //get all items for edit screen
   allItems: function () {
@@ -73,8 +75,9 @@ const groceryController = {
 
   //get items in recipe to add to list
 
+  //==============
   /*-- UPDATE --*/
-  //================
+  //==============
 
   //shopping trip done, clears all obtained ex default, leaves next time
   shopDone: function (hhID) {
@@ -135,8 +138,9 @@ const groceryController = {
   //add all items in recipe to list
   //takes in userID, recipeID
 
+  //========================
   /*-- BOOLEAN FLIPPERS --*/
-  //================
+  //========================
 
   //item obtained
   gotItFlip: function (newVal, lineID) {
@@ -174,8 +178,9 @@ const groceryController = {
       .then(dbitems => console.log(dbitems));
   },
 
+  //===============
   /*-- DESTROY --*/
-  //================
+  //===============
 
   //delete list item
   removeListItem:  function (lineID) {
