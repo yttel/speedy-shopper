@@ -3,7 +3,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
   [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
-  
+
   [![NPM](https://nodei.co/npm/connect-flash.png?mini=true)](https://nodei.co/npm/connect-flash/)
   [![NPM](https://nodei.co/npm/debug.png?mini=true)](https://nodei.co/npm/debug/)
   [![NPM](https://nodei.co/npm/dotenv.png?mini=true)](https://nodei.co/npm/dotenv/)
@@ -21,9 +21,7 @@
   
   
 # Speedy Shopper.
-#### matt
-#### 
-  
+
 ## A Little About Speedy Shopper
 Speedy Shopper gives the user the ability to dynamically store, check off, add to a list for next time. The user also has the ability to add any item they please using the text field.
   
