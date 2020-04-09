@@ -16,4 +16,13 @@ router.get("/list", function(req, res){
   });
 });
 
+router.get("/edit", function(req, res){
+  groceryCont.allItems().then(response => {
+    var hbsObject = {
+      item: response
+    };
+    res.render("index.handlebars", hbsObject);
+  });
+});
+
 module.exports = router;
