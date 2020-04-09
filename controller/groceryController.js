@@ -6,7 +6,7 @@ const resolveToJSON = (sqlzeArr) => {
 
 const groceryController = {
 
-  /*-- MAKERS --*/
+  /*-- CREATE --*/
   //==============
 
   //new category
@@ -37,7 +37,7 @@ const groceryController = {
 
   //new recipe
 
-  /*-- FINDERS --*/
+  /*-- READ --*/
   //===============
 
   //get all items for edit screen
@@ -73,16 +73,67 @@ const groceryController = {
 
   //get items in recipe to add to list
 
-  /*-- UPDATERS --*/
+  /*-- UPDATE --*/
   //================
 
+  //shopping trip done, clears all obtained ex default, leaves next time
+  shopDone: function (hhID) {
+    return this.allByHousehold(hhID).then((dbItems) => {
+      console.log(dbItems);
+      for (const { listItem, isDefault, obtained, nextTime } of dbItems) {
+        if (nextTime) {
+          this.nextTimeFlip(false, listItem);
+        }
+        else if (obtained && isDefault) {
+          this.gotItFlip(false, listItem);
+        }
+        else if (obtained && !isDefault) {
+          this.removeItem(listItem);
+        }
+      }
+    });
+  },  
+
   //edit item
+  editItem: function (newVal, lineID) {
+    return db.Item.update({
+      name: newVal
+    },{
+      where: {
+        id: lineID
+      }
+    })
+      .then(dbitems => console.log(dbitems));
+  },
 
   //edit category
+  editCategory: function (newVal, lineID) {
+    return db.Category.update({
+      name: newVal
+    },{
+      where: {
+        id: lineID
+      }
+    })
+      .then(dbitems => console.log(dbitems));
+  },
 
   //edit household
+  editHousehold: function (newVal, lineID) {
+    return db.Household.update({
+      name: newVal
+    },{
+      where: {
+        id: lineID
+      }
+    })
+      .then(dbitems => console.log(dbitems));
+  },
 
   //edit recipe
+
+  //add all items in recipe to list
+  //takes in userID, recipeID
 
   /*-- BOOLEAN FLIPPERS --*/
   //================
@@ -123,30 +174,11 @@ const groceryController = {
       .then(dbitems => console.log(dbitems));
   },
 
-  /*-- KILLERS --*/
+  /*-- DESTROY --*/
   //================
 
-  //shopping trip done, clears all obtained ex default, leaves next time
-  shopDone: function (hhID) {
-    return this.allByHousehold(hhID).then((dbItems) => {
-      console.log(dbItems);
-      // const theList = resolveToJSON(dbItems);
-      for (const { listItem, isDefault, obtained, nextTime } of dbItems) {
-        if (nextTime) {
-          this.nextTimeFlip(false, listItem);
-        }
-        else if (obtained && isDefault) {
-          this.gotItFlip(false, listItem);
-        }
-        else if (obtained && !isDefault) {
-          this.removeItem(listItem);
-        }
-      }
-    });
-  },
-
   //delete list item
-  removeItem:  function (lineID) {
+  removeListItem:  function (lineID) {
     return db.ListItem.destroy({
       where: {
         listitem: lineID
@@ -158,9 +190,6 @@ const groceryController = {
   //delete item, only if not currently on a list
 
   //delete category, non cascade (or change to other)
-
-  //add all items in recipe to list
-  //takes in userID, recipeID
 
   //fuzzy search for items that match
 };

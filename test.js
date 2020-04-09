@@ -18,21 +18,21 @@ const db = require("./models");
 //     }).then(() => db.sequelize.close());
 // });
 
-// db.sequelize.sync({ force: false }).then(function() {
-//   groceryController.allByHousehold(2)
-//     .then((things) => { 
-//       console.table(things);
-//       return Promise.resolve();
-//     }).then(() => db.sequelize.close());
-// });
-
 db.sequelize.sync({ force: false }).then(function() {
-  groceryController.allCategory()
+  groceryController.allByHousehold(2)
     .then((things) => { 
       console.table(things);
       return Promise.resolve();
     }).then(() => db.sequelize.close());
 });
+
+// db.sequelize.sync({ force: false }).then(function() {
+//   groceryController.allCategory()
+//     .then((things) => { 
+//       console.table(things);
+//       return Promise.resolve();
+//     }).then(() => db.sequelize.close());
+// });
 
 // db.sequelize.sync({ force: false }).then(function() {
 //   groceryController.addCategory("sweets")
@@ -52,6 +52,30 @@ db.sequelize.sync({ force: false }).then(function() {
 
 // db.sequelize.sync({ force: false }).then(function() {
 //   groceryController.nextTime(5)
+//     .then((things) => { 
+//       console.table(things);
+//       return Promise.resolve();
+//     }).then(() => db.sequelize.close());
+// });
+
+// db.sequelize.sync({ force: false }).then(function() {
+//   groceryController.addItem("coffee", 6)
+//     .then((things) => { 
+//       console.table(things);
+//       return Promise.resolve();
+//     }).then(() => db.sequelize.close());
+// });
+
+// db.sequelize.sync({ force: false }).then(function() {
+//   groceryController.addHousehold("wren", 1)
+//     .then((things) => { 
+//       console.table(things);
+//       return Promise.resolve();
+//     }).then(() => db.sequelize.close());
+// });
+
+// db.sequelize.sync({ force: false }).then(function() {
+//   groceryController.shopDone(2)
 //     .then((things) => { 
 //       console.table(things);
 //       return Promise.resolve();
