@@ -19,6 +19,15 @@ router.post("/api/nextTime", function (req, res){
     });
 }) ;
 
+//done shopping aka clear list and bring to edit screen
+router.post("/api/allDone", function (req, res){
+  const hhID = 1; //dynamic later
+  groceryController.shopDone(hhID)  
+    .then(() => {
+      return res.status(200).end();
+    });
+}) ;
+
 router.post("/api/unobtained", function (req, res){
   console.log(`LIST ITEM ID: ${req.body.id}`);
   groceryController.gotItFlip(false, req.body.id)

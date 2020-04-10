@@ -15,7 +15,8 @@ router.get("/", (req, res) => {
 });
 
 router.get("/list", function(req, res){
-  groceryCont.allByHousehold(3).then(response => {
+  const hhID = 1; //dynamic later
+  groceryCont.allByHousehold(hhID).then(response => {
     var hbsObject = {
       listItem: response
     };
