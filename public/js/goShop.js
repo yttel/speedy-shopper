@@ -57,10 +57,13 @@ $(document).ready(function() {
     });
   }
 
-  
-
   //"ends" the shop
   function handleDoneShop() {
-    groceryController.shopDone();
+    $.ajax({
+      method: "POST",
+      url: "/api/allDone"
+    }).then(() => {
+      return location.reload();
+    });
   }
 });
