@@ -20,6 +20,7 @@ router.get("/list", function(req, res){
       listItem: response
     };
     console.log(response);
+    console.log(`EMAIL: ${JSON.stringify(req.user._json.email)}`);
     res.render("list.handlebars", hbsObject);
   });
 });
