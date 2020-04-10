@@ -4,8 +4,8 @@ const groceryController = require("../controller/groceryController");
 
 //change boolean for obtained
 router.post("/api/obtained", function (req, res){
-  console.log(`LIST ITEM ID: ${req.body.id}`);
-  groceryController.gotItFlip(true, req.body.id)
+  console.log(`LIST ITEM ID: ${req.body}`);
+  groceryController.gotItFlip(req.body.id)
     .then(() => {
       return res.status(200).end();
     });
@@ -13,7 +13,16 @@ router.post("/api/obtained", function (req, res){
 
 //change boolean for next time
 router.post("/api/nextTime", function (req, res){
-  groceryController.nextTimeFlip(true, req.body.id)
+  groceryController.nextTimeFlip(req.body.id)
+    .then(() => {
+      return res.status(200).end();
+    });
+}) ;
+
+//done shopping aka clear list and bring to edit screen
+router.post("/api/allDone", function (req, res){
+  const hhID = 1; //dynamic later
+  groceryController.shopDone(hhID)
     .then(() => {
       return res.status(200).end();
     });

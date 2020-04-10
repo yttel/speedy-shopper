@@ -15,12 +15,15 @@ router.get("/", (req, res) => {
 });
 
 router.get("/list", function(req, res){
-  groceryCont.allByHousehold(3).then(response => {
+  const hhID = 1; //dynamic later
+  groceryCont.allByHousehold(hhID).then(response => {
     var hbsObject = {
       listItem: response
     };
     console.log(response);
-    console.log(`EMAIL: ${JSON.stringify(req.user._json.email)}`);
+    if (req.user) {
+      console.log(`EMAIL: ${JSON.stringify(req.user._json.email)}`);
+    }
     res.render("list.handlebars", hbsObject);
   });
 });
