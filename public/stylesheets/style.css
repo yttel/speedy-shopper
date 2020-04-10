@@ -13,6 +13,11 @@ div#goshoplist {
   border-radius: 25px;
 }
 
+div.signin {
+  background: #efefef;
+  border-radius: 25px;
+}
+
 h1.listtitle {
   font-family: "Lobster", cursive;
 }
