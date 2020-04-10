@@ -6,9 +6,50 @@ const resolveToJSON = (sqlzeArr) => {
 
 const groceryController = {
 
+  //==============
+  /*-- CREATE --*/
+  //==============
+
+  //new category
+  addCategory: function (catName) {
+    return db.Category.create({
+      name: catName
+    })
+      .then(dbitems => dbitems.toJSON());
+  },
+
+  //new item
+  addItem: function (itemName, catID) {
+    return db.Item.create({
+      name: itemName,
+      CategoryId: catID
+    })
+      .then(dbitems => dbitems.toJSON());
+  },
+
+  //new household
+  addHousehold: function (hhName, userID) {
+    return db.Household.create({
+      name: hhName,
+      UserId: userID
+    })
+      .then(dbitems => dbitems.toJSON());
+  },
+
+  //new recipe
+
+  //============
+  /*-- READ --*/
+  //============
+
   //get all items for edit screen
   allItems: function () {
     return db.Item.findAll({}).then(dbitems => resolveToJSON(dbitems));
+  },
+
+  //all categories 
+  allCategory: function () {
+    return db.Category.findAll({}).then(dbitems => resolveToJSON(dbitems));
   },
 
   //get all items for shop screen
@@ -22,7 +63,6 @@ const groceryController = {
   },
 
   //get items by category for edit
-  //takes catID
   itemsByCategory:  function (catID) {
     return db.Item.findAll({
       where: {
@@ -31,34 +71,81 @@ const groceryController = {
     }).then(dbitems => resolveToJSON(dbitems));
   },
 
-  //all categories 
-  allCategory: function () {
-    return db.Category.findAll({}).then(dbitems => resolveToJSON(dbitems));
-  },
-
   //get items by category for shop?
 
-  //new category
-  addCategory: function (catName) {
-    return db.Category.create({
-      name: catName
+  //get items in recipe to add to list
+
+  //==============
+  /*-- UPDATE --*/
+  //==============
+
+  //shopping trip done, clears all obtained ex default, leaves next time
+  shopDone: function (hhID) {
+    return this.allByHousehold(hhID).then((dbItems) => {
+      console.log(dbItems);
+      for (const { listItem, isDefault, obtained, nextTime } of dbItems) {
+        if (nextTime) {
+          this.nextTimeFlip(false, listItem);
+        }
+        else if (obtained && isDefault) {
+          this.gotItFlip(false, listItem);
+        }
+        else if (obtained && !isDefault) {
+          this.removeItem(listItem);
+        }
+      }
+    });
+  },  
+
+  //edit item
+  editItem: function (newVal, lineID) {
+    return db.Item.update({
+      name: newVal
+    },{
+      where: {
+        id: lineID
+      }
     })
       .then(dbitems => console.log(dbitems));
   },
 
-  //new item
-  addItem: function (itemName, catID) {
-    return db.Category.create({
-      name: itemName,
-      CategoryId: catID
+  //edit category
+  editCategory: function (newVal, lineID) {
+    return db.Category.update({
+      name: newVal
+    },{
+      where: {
+        id: lineID
+      }
     })
-      .then(dbitems => resolveToJSON(dbitems));
+      .then(dbitems => console.log(dbitems));
   },
 
+  //edit household
+  editHousehold: function (newVal, lineID) {
+    return db.Household.update({
+      name: newVal
+    },{
+      where: {
+        id: lineID
+      }
+    })
+      .then(dbitems => console.log(dbitems));
+  },
+
+  //edit recipe
+
+  //add all items in recipe to list
+  //takes in userID, recipeID
+
+  //========================
+  /*-- BOOLEAN FLIPPERS --*/
+  //========================
+
   //item obtained
-  gotIt: function (lineID) {
+  gotItFlip: function (newVal, lineID) {
     return db.ListItem.update({
-      obtained: true
+      obtained: newVal
     },{
       where: {
         listitem: lineID
@@ -68,9 +155,9 @@ const groceryController = {
   },
 
   //get it next time
-  nextTime: function (lineID) {
+  nextTimeFlip: function (newVal, lineID) {
     return db.ListItem.update({
-      nextTime: true
+      nextTime: newVal
     },{
       where: {
         listitem: lineID
@@ -78,20 +165,36 @@ const groceryController = {
     })
       .then(dbitems => console.log(dbitems));
   },
-  //new household
+
+  //default list
+  defaultListFlip: function (newVal, lineID) {
+    return db.ListItem.update({
+      isDefault: newVal
+    },{
+      where: {
+        listitem: lineID
+      }
+    })
+      .then(dbitems => console.log(dbitems));
+  },
+
+  //===============
+  /*-- DESTROY --*/
+  //===============
+
+  //delete list item
+  removeListItem:  function (lineID) {
+    return db.ListItem.destroy({
+      where: {
+        listitem: lineID
+      }
+    })
+      .then(dbitems => console.log(dbitems));
+  },
 
   //delete item, only if not currently on a list
 
   //delete category, non cascade (or change to other)
-
-  //rename item
-
-  //rename user
-
-  //rename category
-
-  //add all items in recipe to list
-  //takes in userID, recipeID
 
   //fuzzy search for items that match
 };
