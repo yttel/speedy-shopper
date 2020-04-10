@@ -57,8 +57,6 @@ $(document).ready(function() {
     });
   }
 
-  
-
   //"ends" the shop
   function handleDoneShop() {
     $.ajax({
@@ -67,6 +65,5 @@ $(document).ready(function() {
     }).then(() => {
       return location.reload();
     });
-    groceryController.shopDone();
   }
 });

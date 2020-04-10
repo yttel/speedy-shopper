@@ -287,7 +287,7 @@ const shoppingList = [{
   household: 1 
 },{
   itemid:62,
-  household: 1 
+  household: 1   
 }];
 
 const seedMe = async () => {
