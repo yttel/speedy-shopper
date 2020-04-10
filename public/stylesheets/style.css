@@ -22,7 +22,7 @@ h1.listtitle {
   font-family: "Lobster", cursive;
 }
 
-h2.nexttime {
+h2.nexttime, .obtained {
   font-family: "Lobster", cursive;
 }
 
@@ -37,6 +37,10 @@ button.delete-listitem {
 
 button.next-time {
   background-color: #01b3d3;
+}
+
+button.undo-nexttime, .readd-listitem {
+  background-color: #eb0505;
 }
 
 i.fa-cart-arrow-down {

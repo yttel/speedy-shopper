@@ -19,4 +19,20 @@ router.post("/api/nextTime", function (req, res){
     });
 }) ;
 
+router.post("/api/unobtained", function (req, res){
+  console.log(`LIST ITEM ID: ${req.body.id}`);
+  groceryController.gotItFlip(false, req.body.id)
+    .then(() => {
+      return res.status(200).end();
+    });
+}) ;
+
+router.post("/api/undonexttime", function (req, res){
+  console.log(`LIST ITEM ID: ${req.body.id}`);
+  groceryController.nextTimeFlip(false, req.body.id)
+    .then(() => {
+      return res.status(200).end();
+    });
+}) ;
+
 module.exports = router;

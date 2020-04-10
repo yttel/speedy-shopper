@@ -158,11 +158,29 @@
         <h2 class="nexttime my-3">Get Next Time!</h2>
     </div>
     <hr>
-    <div class="nexttime-items">
+    <div class="nexttime-items pb-4">
         {{#each listItem}}
             {{#if nextTime}}
                 <li>
                     {{Item.name}}
+                    <button class="undo-nexttime border-0 rounded-circle ml-3" data-id="{{this.listItem}}"><i class="fas fa-undo-alt"></i></button>
+                </li>
+            {{/if}}
+        {{/each}}        
+    </div>
+</div>
+
+<div class="container my-5" id="goshoplist">
+    <div class="row d-flex justify-content-center">
+        <h2 class="obtained my-3">Got it!</h2>
+    </div>
+    <hr>
+    <div class="obtained-items pb-4">
+        {{#each listItem}}
+            {{#if obtained}}
+                <li>
+                    {{Item.name}}
+                    <button class="readd-listitem border-0 rounded-circle ml-3" data-id="{{this.listItem}}"><i class="fas fa-undo-alt"></i></button>
                 </li>
             {{/if}}
         {{/each}}        
