@@ -14,6 +14,11 @@ const usersRouter = require("./routes/users");
 const exphbs = require("express-handlebars");
 const db = require("./models");
 const Handlebars = require("handlebars");
+
+const apiRoutes = require("./routes/api-routes");
+
+
+
 const {
   allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access");
@@ -63,6 +68,14 @@ app.engine(
   exphbs({
     defaultLayout: "main",
     handlebars: allowInsecurePrototypeAccess(Handlebars),
+    helpers: {
+      ifEquals: function (a, b, options) {
+        if (a === b) {
+          return options.fn(this);
+        }
+        return options.inverse(this);
+      }
+    }
   })
 );
 app.set("view engine", "handlebars");
@@ -114,7 +127,7 @@ app.use(userInViews());
 app.use("/", authRouter);
 app.use("/", usersRouter);
 
-// app.use(apiroutes);
+app.use(apiRoutes);
 app.use(htmlRouter);
 
 // Catch 404 and forward to error handler
