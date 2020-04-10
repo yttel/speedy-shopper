@@ -143,9 +143,9 @@ const groceryController = {
   //========================
 
   //item obtained
-  gotItFlip: function (newVal, lineID) {
+  gotItFlip: function (lineID) {
     return db.ListItem.update({
-      obtained: newVal
+      obtained: !obtained
     },{
       where: {
         listitem: lineID
@@ -155,9 +155,9 @@ const groceryController = {
   },
 
   //get it next time
-  nextTimeFlip: function (newVal, lineID) {
+  nextTimeFlip: function (lineID) {
     return db.ListItem.update({
-      nextTime: newVal
+      nextTime: !nextTime
     },{
       where: {
         listitem: lineID
@@ -167,9 +167,9 @@ const groceryController = {
   },
 
   //default list
-  defaultListFlip: function (newVal, lineID) {
+  defaultListFlip: function (lineID) {
     return db.ListItem.update({
-      isDefault: newVal
+      isDefault: !isDefault
     },{
       where: {
         listitem: lineID

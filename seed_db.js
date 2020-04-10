@@ -237,6 +237,57 @@ const shoppingList = [{
 },{
   itemid:1,
   household: 2
+},{
+  itemid:6,
+  household: 1 
+},{
+  itemid:15,
+  household: 1 
+},{
+  itemid:18,
+  household: 1 
+},{
+  itemid:20,
+  household: 1 
+},{
+  itemid:29,
+  household: 1 
+},{
+  itemid:33,
+  household: 1 
+},{
+  itemid:36,
+  household: 1 
+},{
+  itemid:42,
+  household: 1 
+},{
+  itemid:47,
+  household: 1 
+},{
+  itemid:45,
+  household: 1 
+},{
+  itemid:48,
+  household: 1 
+},{
+  itemid:52,
+  household: 1 
+},{
+  itemid:56,
+  household: 1 
+},{
+  itemid:59,
+  household: 1 
+},{
+  itemid:61,
+  household: 1 
+},{
+  itemid:64,
+  household: 1 
+},{
+  itemid:62,
+  household: 1 
 }];
 
 const seedMe = async () => {

@@ -61,6 +61,12 @@ $(document).ready(function() {
 
   //"ends" the shop
   function handleDoneShop() {
+    $.ajax({
+      method: "POST",
+      url: "/api/allDone"
+    }).then(() => {
+      return location.reload();
+    });
     groceryController.shopDone();
   }
 });
