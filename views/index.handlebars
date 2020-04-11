@@ -9,12 +9,17 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <ul class="navbar-nav mr-auto">
-                <li><a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
                 <li><a class="nav-item nav-link" href="#">Edit List</a></li>
-                <li><a class="nav-item nav-link" href="#">Shopping List</a></li>
+                <li><a class="nav-item nav-link" href="/list">Go Shopping!</a></li>
+                {{> user-block }}
+                <button id="qsLogoutBtn" class="btn btn-primary btn-margin auth-invisible hidden">
+                {{#if locals.user}}
+                {{else}}
+                <a href="/logout" class="LoginBtn">logout</a>
+                {{/if}}
+                </button>
+
             </ul>
-            {{> login-block}}
         </div>
     </div>
 </nav>
