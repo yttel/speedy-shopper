@@ -26,9 +26,9 @@ router.get("/list", function (req, res) {
 });
 
 router.get("/edit", function (req, res) {
-  groceryCont.allCategory().then((response) => {
+  groceryCont.allItems().then((response) => {
     var hbsObject = {
-      Category: response,
+      Item: response,
     };
     res.render("index.handlebars", hbsObject);
   });
