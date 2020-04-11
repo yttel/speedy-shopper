@@ -1,15 +1,22 @@
-
 <nav class="navbar navbar-expand-md navbar-light bg-light">
     <a class="navbar-brand" href="#">Speedy Shopper</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav d-flex">
             <ul class="navbar-nav">
                 <li><a class="nav-item nav-link" href="/">Edit List</a></li>
                 <li><a class="nav-item nav-link" href="#">Go Shopping</a></li>
+                <h4 class="userName"> Get your shop on </h4> {{> user-block }}
+                <button id="qsLogoutBtn" class="btn btn-primary btn-margin auth-invisible hidden">
+                    {{#if locals.user}}
+                    {{else}}
+                    <a href="/logout" class="LoginBtn">logout</a>
+                    {{/if}}
+                </button>
+
             </ul>
         </div>
     </div>

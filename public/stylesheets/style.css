@@ -29,6 +29,12 @@ h2.nexttime, .obtained {
 h4.userName {
   font-family: "Lobster", cursive;
   margin-right: 1vw;
+  margin-left: 2vw;
+}
+h4.userNameBlock {
+  font-family: "Lobster", cursive;
+  margin-right: 1vw;
+
 }
 
 a.navbar-brand {
