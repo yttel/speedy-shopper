@@ -82,7 +82,7 @@ const groceryController = {
   //shopping trip done, clears all obtained ex default, leaves next time
   shopDone: function (hhID) {
     return this.allByHousehold(hhID).then((dbItems) => {
-      console.log(dbItems);
+      //console.log(dbItems);
       for (const { listItem, isDefault, obtained, nextTime } of dbItems) {
         if (nextTime) {
           this.nextTimeFlip(false, listItem);
@@ -91,7 +91,7 @@ const groceryController = {
           this.gotItFlip(false, listItem);
         }
         else if (obtained && !isDefault) {
-          this.removeItem(listItem);
+          this.removeListItem(listItem);
         }
       }
     });
