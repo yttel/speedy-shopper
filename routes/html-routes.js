@@ -15,11 +15,22 @@ router.get("/", (req, res) => {
 });
 
 router.get("/list", function(req, res){
-  groceryCont.allByHousehold(1).then(response => {
+  const hhID = 1; //dynamic later
+  groceryCont.allByHousehold(hhID).then(response => {
     var hbsObject = {
       listItem: response
     };
+    console.log(response);
     res.render("list.handlebars", hbsObject);
+  });
+});
+
+router.get("/edit", function(req, res){
+  groceryCont.allItems().then(response => {
+    var hbsObject = {
+      item: response
+    };
+    res.render("index.handlebars", hbsObject);
   });
 });
 

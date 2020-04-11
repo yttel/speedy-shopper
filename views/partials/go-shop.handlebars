@@ -10,17 +10,19 @@
             <div class="cow mb-4">
                 <h3><i class="fas fa-cheese"></i>   Dairy</h3>
                 <ul id="theDairy">
-                    <li>Milk<button class="delete-listitem border-0 rounded-circle ml-3"><i class="fas fa-cart-arrow-down"></i></button>
-                    <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button></li>
-                
+
                     {{#each listItem}}
-                        {{!-- {{#if Item.CategoryId == 1}} --}}
+                        {{#ifEquals this.Item.CategoryId 1 }}
+                        {{#unless obtained}}
+                        {{#unless nextTime}}
                             <li>
 	                            {{Item.name}}
-                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.id}}"><i class="fas fa-cart-arrow-down"></i></button>
-                                <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button>
+                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.listItem}}"><i class="fas fa-cart-arrow-down"></i></button>
+                                <button class="next-time border-0 rounded-circle ml-2" data-id="{{this.listItem}}"><i class="fas fa-share-square"></i></button>
                             </li>
-                        {{!-- {{/if}} --}}
+                        {{/unless}}
+                        {{/unless}}
+                        {{/ifEquals}}
                     {{/each}}
                 
                 </ul>
@@ -28,54 +30,60 @@
             <div class="veggies mb-4">
                 <h3><i class="fas fa-carrot"></i>   Produce</h3>
                 <ul id="TheProduce">
-                    <li>Carrots<button class="delete-listitem border-0 rounded-circle ml-3"><i class="fas fa-cart-arrow-down"></i></button>
-                    <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button></li>
 
-                    {{!-- {{#each listItem}}
-                        {{#if (eq Item.CategoryId "2")}}
+                    {{#each listItem}}
+                        {{#ifEquals this.Item.CategoryId 2 }}
+                        {{#unless obtained}}
+                        {{#unless nextTime}}
                             <li>
 	                            {{Item.name}}
-                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.id}}"><i class="fas fa-cart-arrow-down"></i></button>
-                                <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button>
+                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.listItem}}"><i class="fas fa-cart-arrow-down"></i></button>
+                                <button class="next-time border-0 rounded-circle ml-2" data-id="{{this.listItem}}"><i class="fas fa-share-square"></i></button>
                             </li>
-                        {{/if}}
-                    {{/each}} --}}
+                        {{/unless}}
+                        {{/unless}}
+                        {{/ifEquals}}
+                    {{/each}}
 
                 </ul>
             </div>
             <div class="meat mb-4">
                 <h3><i class="fas fa-bacon"></i>   Meat</h3>
                 <ul id="TheMeat">
-                    <li>Steak<button class="delete-listitem border-0 rounded-circle ml-3"><i class="fas fa-cart-arrow-down"></i></button>
-                    <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button></li>
 
-                    {{!-- {{#each listItem}}
-                        {{#if (eq Item.CategoryId "3")}}
+                    {{#each listItem}}
+                        {{#ifEquals this.Item.CategoryId 3 }}
+                        {{#unless obtained}}
+                        {{#unless nextTime}}
                             <li>
 	                            {{Item.name}}
-                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.id}}"><i class="fas fa-cart-arrow-down"></i></button>
-                                <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button>
+                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.listItem}}"><i class="fas fa-cart-arrow-down"></i></button>
+                                <button class="next-time border-0 rounded-circle ml-2" data-id="{{this.listItem}}"><i class="fas fa-share-square"></i></button>
                             </li>
-                        {{/if}}
-                    {{/each}} --}}
+                        {{/unless}}
+                        {{/unless}}
+                        {{/ifEquals}}
+                    {{/each}}
 
                 </ul>
             </div>
             <div class="bread mb-4">
                 <h3><i class="fas fa-bread-slice"></i>   Bread/Bakery</h3>
                 <ul id="TheBread">
-                    <li>Bagels<button class="delete-listitem border-0 rounded-circle ml-3"><i class="fas fa-cart-arrow-down"></i></button>
-                    <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button></li>
 
-                    {{!-- {{#each listItem}}
-                        {{#if (eq Item.CategoryId "4")}}
+                    {{#each listItem}}
+                        {{#ifEquals this.Item.CategoryId 4 }}
+                        {{#unless obtained}}
+                        {{#unless nextTime}}
                             <li>
 	                            {{Item.name}}
-                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.id}}"><i class="fas fa-cart-arrow-down"></i></button>
-                                <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button>
+                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.listItem}}"><i class="fas fa-cart-arrow-down"></i></button>
+                                <button class="next-time border-0 rounded-circle ml-2" data-id="{{this.listItem}}"><i class="fas fa-share-square"></i></button>
                             </li>
-                        {{/if}}
-                    {{/each}} --}}
+                        {{/unless}}
+                        {{/unless}}
+                        {{/ifEquals}}
+                    {{/each}}
 
                 </ul>
             </div>
@@ -84,54 +92,60 @@
             <div class="frozen mb-4">
                 <h3><i class="far fa-snowflake"></i>   Frozen</i></h3>
                 <ul id="TheFrozen">
-                    <li>Ice Cream<button class="delete-listitem border-0 rounded-circle ml-3"><i class="fas fa-cart-arrow-down"></i></button>
-                    <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button></li>
 
-                    {{!-- {{#each listItem}}
-                        {{#if (eq Item.CategoryId "5")}}
+                    {{#each listItem}}
+                        {{#ifEquals this.Item.CategoryId 5 }}
+                        {{#unless obtained}}
+                        {{#unless nextTime}}
                             <li>
 	                            {{Item.name}}
-                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.id}}"><i class="fas fa-cart-arrow-down"></i></button>
-                                <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button>
+                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.listItem}}"><i class="fas fa-cart-arrow-down"></i></button>
+                                <button class="next-time border-0 rounded-circle ml-2" data-id="{{this.listItem}}"><i class="fas fa-share-square"></i></button>
                             </li>
-                        {{/if}}
-                    {{/each}} --}}
+                        {{/unless}}
+                        {{/unless}}
+                        {{/ifEquals}}
+                    {{/each}}
 
                 </ul>
             </div>
           <div class="packaged mb-4">
                 <h3><i class="fas fa-box-open"></i>   Packaged/Dry Goods</h3>
                 <ul id="ThePackaged">
-                    <li>Pasta<button class="delete-listitem border-0 rounded-circle ml-3"><i class="fas fa-cart-arrow-down"></i></button>
-                    <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button></li>
 
-                    {{!-- {{#each listItem}}
-                        {{#if (eq Item.CategoryId "6")}}
+                    {{#each listItem}}
+                        {{#ifEquals this.Item.CategoryId 6 }}
+                        {{#unless obtained}}
+                        {{#unless nextTime}}
                             <li>
 	                            {{Item.name}}
-                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.id}}"><i class="fas fa-cart-arrow-down"></i></button>
-                                <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button>
+                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.listItem}}"><i class="fas fa-cart-arrow-down"></i></button>
+                                <button class="next-time border-0 rounded-circle ml-2" data-id="{{this.listItem}}"><i class="fas fa-share-square"></i></button>
                             </li>
-                        {{/if}}
-                    {{/each}} --}}
+                        {{/unless}}
+                        {{/unless}}
+                        {{/ifEquals}}
+                    {{/each}}
 
                 </ul>
             </div>  
             <div class="other mb-4">
                 <h3><i class="fas fa-utensils"></i>   Other</h3>
                 <ul id="TheOther">
-                    <li>Toilet Paper<button class="delete-listitem border-0 rounded-circle ml-3"><i class="fas fa-cart-arrow-down"></i></button>
-                    <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button></li>
 
-                    {{!-- {{#each listItem}}
-                        {{#if (eq Item.CategoryId "7")}}
+                    {{#each listItem}}
+                        {{#ifEquals this.Item.CategoryId 7 }}
+                        {{#unless obtained}}
+                        {{#unless nextTime}}
                             <li>
 	                            {{Item.name}}
-                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.id}}"><i class="fas fa-cart-arrow-down"></i></button>
-                                <button class="next-time border-0 rounded-circle ml-2"><i class="fas fa-share-square"></i></button>
+                                <button class="delete-listitem border-0 rounded-circle ml-3" data-id="{{this.listItem}}"><i class="fas fa-cart-arrow-down"></i></button>
+                                <button class="next-time border-0 rounded-circle ml-2" data-id="{{this.listItem}}"><i class="fas fa-share-square"></i></button>
                             </li>
-                        {{/if}}
-                    {{/each}} --}}
+                        {{/unless}}
+                        {{/unless}}
+                        {{/ifEquals}}
+                    {{/each}}
                     
                 </ul>
             </div>
@@ -144,7 +158,37 @@
         <h2 class="nexttime my-3">Get Next Time!</h2>
     </div>
     <hr>
-    <div class="nexttime-items">
-        {{!-- push items for next time here --}}
+    <div class="nexttime-items pb-4">
+        {{#each listItem}}
+            {{#if nextTime}}
+                <li>
+                    {{Item.name}}
+                    <button class="undo-nexttime border-0 rounded-circle ml-3" data-id="{{this.listItem}}"><i class="fas fa-undo-alt"></i></button>
+                </li>
+            {{/if}}
+        {{/each}}        
     </div>
 </div>
+
+<div class="container my-5" id="goshoplist">
+    <div class="row d-flex justify-content-center">
+        <h2 class="obtained my-3">Got it!</h2>
+    </div>
+    <hr>
+    <div class="obtained-items pb-4">
+        {{#each listItem}}
+            {{#if obtained}}
+                <li>
+                    {{Item.name}}
+                    <button class="readd-listitem border-0 rounded-circle ml-3" data-id="{{this.listItem}}"><i class="fas fa-undo-alt"></i></button>
+                </li>
+            {{/if}}
+        {{/each}}        
+    </div>
+</div>
+
+<div class="container d-flex justify-content-center">
+    <button class="done-shop btn-lg btn-outline-success mb-5 border-0"><i class="fas fa-check"></i>   Done Shopping!</button>
+</div>
+
+
