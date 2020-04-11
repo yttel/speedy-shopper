@@ -40,15 +40,17 @@ router.post("/api/undonexttime", function (req, res) {
 });
 
 router.post("/api/makeIt", function (req, res) {
+  const hhID = 1;
   console.log(`List Item ID: ${req.body.id}`);
-  groceryController.defaultListFlip(true, req.body.id).then(() => {
+  groceryController.addListItem(hhID, req.body.id).then(() => {
     return res.status(200).end();
   });
 });
 
-router.post("/api/optionsList", function (req, res) {
-  let catval = $("categories").val();
+router.get("/api/optionsList:id", function (req, res) {
+  console.log("here we are");
   let catID = 1;
+  let catval = $(".categories").val();
   console.log(catval);
   console.log(`List Item ID: ${req.body.id}`);
   groceryController.itemsByCategory(catID).then(() => {
