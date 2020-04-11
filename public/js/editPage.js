@@ -4,10 +4,11 @@ $(document).ready(() => {
   });
 
   $(".categories").on("click", function () {
-    let catList = $(this).attr("data-id");
+    let catList = $(this).attr("value");
+    console.log(catList);
 
     $.ajax({
-      method: "POST",
+      method: "GET",
       url: "/api/optionsList",
       data: { id: catList },
     }).then(() => {
