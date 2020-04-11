@@ -18,13 +18,13 @@ const db = require("./models");
 //     }).then(() => db.sequelize.close());
 // });
 
-db.sequelize.sync({ force: false }).then(function() {
-  groceryController.allByHousehold(2)
-    .then((things) => { 
-      console.table(things);
-      return Promise.resolve();
-    }).then(() => db.sequelize.close());
-});
+// db.sequelize.sync({ force: false }).then(function() {
+//   groceryController.allByHousehold(2)
+//     .then((things) => { 
+//       console.table(things);
+//       return Promise.resolve();
+//     }).then(() => db.sequelize.close());
+// });
 
 // db.sequelize.sync({ force: false }).then(function() {
 //   groceryController.allCategory()
@@ -81,3 +81,11 @@ db.sequelize.sync({ force: false }).then(function() {
 //       return Promise.resolve();
 //     }).then(() => db.sequelize.close());
 // });
+
+db.sequelize.sync({ force: false }).then(function() {
+  groceryController.addListItem(1, 9)
+    .then((things) => { 
+      console.table(things);
+      return Promise.resolve();
+    }).then(() => db.sequelize.close());
+});
