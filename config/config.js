@@ -14,5 +14,10 @@ module.exports =
     use_env_variable: "JAWSDB_URL",
     dialect: "mysql",
     operatorsAliases: false
+  },
+  seedProduction: {
+    use_env_variable: "JAWSDB_URL",
+    dialect: "mysql",
+    operatorsAliases: false,
   }
 };

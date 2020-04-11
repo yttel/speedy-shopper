@@ -1,3 +1,7 @@
+require("dotenv").config();
+
+process.env.NODE_ENV = "seedProduction";
+
 const db = require("./models");
 
 const users = ["letty", "mike", "bobby"];
@@ -328,6 +332,7 @@ const seedMe = async () => {
 
 };
 
-db.sequelize.sync({ force: true }).then(function() {
-  seedMe();
+db.sequelize.sync({ force: true }).then(async function() {
+  await seedMe();
+  db.sequelize.close();
 });
