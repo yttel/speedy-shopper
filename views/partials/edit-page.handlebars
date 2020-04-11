@@ -6,57 +6,30 @@
     </div>
     <hr>
     <div class="row">
-        <div>
-            <form class="addNewItem">
-                <label for="addItem">Search for an Item:</label>
-                <input type="text" id="addItem" name="addItem">
-                <label for="categories">Categories:</label>
-                <select id="categories">
-                    <option value="dairy"><i class="fas fa-cheese"></i> Dairy</option>
-                    <option value="produce"><i class="fas fa-carrot"></i> Produce</option>
-                    <option value="meat"><i class="fas fa-bacon"> Meat</i></option>
-                    <option value="bread"><i class="fas fa-bread-slice"> Bread/Bakery</i></option>
-                    <option value="frozen"><i class="far fa-snowflake"> Frozen</i></option>
-                    <option value="packaged"><i class="fas fa-box-open"></i> Packaged/Dry Goods</option>
-                    <option value="other"><i class="fas fa-utensils"></i> Other</option>
-                </select>
-                <button class="addMe" type="submit" data-addedItem="{{added}}" data-id="{{id}}">Add</button>
-            </form>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
         <div class="col-6 theList">
             <ul>
-                <li class="makeIt">
-
+                {{#each listItem}}
+                <li class="makeIt" data-id="{{id}}">
+                    {{Item.name}}
                 </li>
+                {{/each}}
             </ul>
         </div>
         <div class="col-6 premade">
-            <form class="dropdownSelect">
-                <select id="categories">
-                    {{#each Categories}}
-                    <option value="{{Category.id}}">{{{Category.name}}}</option>
-                    {{/each}}
-                    {{!-- <option value="dairy"><i class="fas fa-cheese"></i> Dairy</option>
-                    <option value="produce"><i class="fas fa-carrot"></i> Produce</option>
-                    <option value="meat"><i class="fas fa-bacon"> Meat</i></option>
-                    <option value="bread"><i class="fas fa-bread-slice"> Bread/Bakery</i></option>
-                    <option value="frozen"><i class="far fa-snowflake"> Frozen</i></option>
-                    <option value="packaged"><i class="fas fa-box-open"></i> Packaged/Dry Goods</option>
-                    <option value="other"><i class="fas fa-utensils"></i> Other</option>
-                    --}}
-                </select>
-            </form>
+            <button value="1" class="categories"><i class="fas fa-cheese"></i> Dairy</button>
+            <button value="2" class="categories"><i class="fas fa-carrot"></i> Produce</button>
+            <button value="3" class="categories"><i class="fas fa-bacon"> Meat</i></button>
+            <button value="4" class="categories"><i class="fas fa-bread-slice"> Bread/Bakery</i></button>
+            <button value="5" class="categories"><i class="far fa-snowflake"> Frozen</i></button>
+            <button value="6" class="categories"><i class="fas fa-box-open"></i> Packaged/Dry Goods</button>
+            <button value="7" class="categories"><i class="fas fa-utensils"></i> Other</button>
             <hr>
-            <ul id="optionsList">
-                {{!-- List items go here based on what category that you select --}}
-                <li class="addTo">
-                    {{#each CategoryID}}
-                    {{{listItem.name}}}
-                    {{/each}}
+            <ul class="optionsList">
+                {{#each listItem.Item.CategoryId}}
+                <li data-id="{{id}}">
+                    {{listItem.name}}
                 </li>
+                {{/each}}
             </ul>
         </div>
     </div>
