@@ -63,7 +63,7 @@ $(document).ready(function() {
       method: "POST",
       url: "/api/allDone"
     }).then(() => {
-      return location.reload();
+      return location.replace("/edit");
     });
   }
 });
