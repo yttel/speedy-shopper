@@ -18,6 +18,15 @@ const groceryController = {
       .then(dbitems => dbitems.toJSON());
   },
 
+  //new listItem
+  addListItem: function (hhID, itemID) {
+    return db.ListItem.create({
+      HouseholdId: hhID,
+      ItemId: itemID
+    })
+      .then(dbitems => dbitems.toJSON());
+  },
+
   //new item
   addItem: function (itemName, catID) {
     return db.Item.create({
