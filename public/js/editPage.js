@@ -3,20 +3,27 @@ $(document).ready(() => {
     location.href = "list";
   });
 
-  $(".addTo").on("click", function () {
-    let newAdd = $(this).data("added");
-    let id = $(this).data("id");
+  $(".categories").on("click", function () {
+    let catList = $(this).attr("data-id");
 
-    let newAddItem = {
-      added: newAdd,
-    };
-
-    $.ajax(`/api/edit/${id}`, {
-      type: "PUT",
-      data: newAddItem,
+    $.ajax({
+      method: "POST",
+      url: "/api/optionsList",
+      data: { id: catList },
     }).then(() => {
-      console.log("This item was added", newAddItem);
-      location.reload;
+      return location.reload();
+    });
+  });
+
+  $(".addTo").on("click", function () {
+    let chosenItem = $(this).attr("data-id");
+
+    $.ajax({
+      method: "POST",
+      url: "/api/makeIt",
+      data: { id: chosenItem },
+    }).then(() => {
+      return location.reload();
     });
   });
 });
