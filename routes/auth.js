@@ -25,7 +25,7 @@ router.get("/callback", function (req, res, next) {
       if (err) { return next(err); }
       const returnTo = req.session.returnTo;
       delete req.session.returnTo;
-      res.redirect(returnTo || "/");
+      res.redirect(returnTo || "/edit");
     });
   })(req, res, next);
 });
@@ -50,7 +50,7 @@ router.get("/logout", (req, res) => {
   });
   logoutURL.search = searchString;
 
-  res.redirect(logoutURL);
+  res.redirect(logoutURL + "/signin");
 });
 
 module.exports = router;

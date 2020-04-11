@@ -26,6 +26,17 @@ h2.nexttime, .obtained {
   font-family: "Lobster", cursive;
 }
 
+h4.userName {
+  font-family: "Lobster", cursive;
+  margin-right: 1vw;
+  margin-left: 2vw;
+}
+h4.userNameBlock {
+  font-family: "Lobster", cursive;
+  margin-right: 1vw;
+
+}
+
 a.navbar-brand {
   font-family: "Lobster", cursive;
   font-size: 35px;
