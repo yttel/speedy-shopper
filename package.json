@@ -29,7 +29,7 @@
     "eslint": "^6.8.0",
     "eslint-plugin-prettier": "^3.1.2",
     "express": "^4.17.1",
-    "express-handlebars": "^4.0.1",
+    "express-handlebars": "^5.3.1",
     "express-openid-connect": "^0.6.0",
     "express-session": "^1.17.0",
     "helmet": "^3.21.0",
